@@ -40,6 +40,7 @@ Entonces se procede a diseñar un flujo de CI/CD a través del archivo cloudbuil
 Una vez en BigQuery, utilizamos Dataform para gestionar transformaciones complejas y la preparación de datos para análisis. Dataform permite definir y automatizar workflows de transformación de datos SQL, facilitando la orquestación de tareas y la dependencia entre ellas. Además, su integración con sistemas de control de versiones como Git permite una colaboración eficaz y el seguimiento de cambios en los scripts de transformación.
 
 ![Dataform](Img/dataform.png) 
+![Dataform nodos](Img/dataform2.png) 
 
 ### Programación de Dataform
 Los scripts de Dataform se programan para ejecutarse cada 10 minutos, utilizando triggers basados en tiempo. Esta frecuencia garantiza que los datos estén constantemente actualizados y listos para análisis en tablas finales. La configuración se realiza a través de la interfaz de Dataform, especificando la rama del repositorio Git a utilizar, lo que permite una integración y entrega continuas (CI/CD) de cambios en los scripts de transformación.
