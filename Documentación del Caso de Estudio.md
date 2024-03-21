@@ -33,7 +33,7 @@ Una vez que se tiene una línea base del pipeline entonces se procede a un ambie
 
 Luego se procede al diseño de las Pruebas Unitarias usando el Framework UnitTest de Python. Consiste en el desarrollo de múltiples pruebas unitarias que posteriormente se deben ejecutar cuando se despliega el proyecto (pipeline).
 
-Entonces se procede a diseñar un flujo de CI/CD a través del archivo cloudbuild.yaml y la herramienta Cloud Build. El objetivo es que cuando se haga un push a una rama por ejemplo Staging en Cloud Source Repositories, sea ejecutado el archivo cloudbuild.yaml (se hace configurando un trigger de Cloud Build que lea el .yaml). Este .yaml define una serie de pasos en orden durante el despliegue al repositorio priorizando la ejecución automática de pruebas unitarias y si pasan correctamente continua procesando el pipeline de beam. (_**Ver repositorio dataflow-repository**_).
+Entonces se procede a diseñar un flujo de CI/CD a través del archivo cloudbuild.yaml y la herramienta Cloud Build. El objetivo es que cuando se haga un push a una rama por ejemplo Staging en Cloud Source Repositories, sea ejecutado el archivo cloudbuild.yaml (se hace configurando un trigger de Cloud Build que lea el .yaml). Este .yaml define una serie de pasos en orden durante el despliegue al repositorio priorizando la ejecución automática de pruebas unitarias y si pasan correctamente continua procesando el pipeline de beam. (_**Ver App dataflow-repository**_).
 
 
 ### BigQuery y Dataform
