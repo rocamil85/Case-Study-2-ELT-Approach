@@ -38,6 +38,7 @@ Entonces se procede a diseñar un flujo de CI/CD a través del archivo cloudbuil
 
 ### BigQuery y Dataform
 Una vez en BigQuery, utilizamos Dataform para gestionar transformaciones complejas y la preparación de datos para análisis. Dataform permite definir y automatizar workflows de transformación de datos SQL, facilitando la orquestación de tareas y la dependencia entre ellas. Además, su integración con sistemas de control de versiones como Git permite una colaboración eficaz y el seguimiento de cambios en los scripts de transformación.
+
 ![Dataform](Img/dataform.png) 
 
 ### Programación de Dataform
