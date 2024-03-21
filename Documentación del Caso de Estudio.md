@@ -11,7 +11,7 @@ La arquitectura diseñada se centra en la ingestión de eventos de órdenes en t
 ## Flujo de Datos
 **Extracción:** Las órdenes son capturadas y enviadas en formato JSON cada vez que cambian de estado. A diferencia del **[Caso de Estudio 1](https://github.com/rocamil85/Caso-de-Estudio-1-Aproximacion-ETL)** donde se consultaban las órdenes cada día a las 2:00 am desde Cloud Run, aquí se decide que el "sistema tercerizado" envíe en tiempo real la orden cada vez que se crea o cambia de estado.
 
-**Pub/Sub:** Una Cloud Functions recibe las órdenes y las publica en un tema de Pub/Sub diseñado para la ingestión de eventos en tiempo real.
+**Pub/Sub:** Una Cloud Function recibe las órdenes y las publica en un tema de Pub/Sub diseñado para la ingestión de eventos en tiempo real.
 
 **Dataflow:** Un trabajo de Dataflow se suscribe al tema de Pub/Sub, realiza una limpieza inicial y transformaciones de formato, y carga los datos en BigQuery.
 
@@ -22,7 +22,7 @@ La arquitectura diseñada se centra en la ingestión de eventos de órdenes en t
 
 ## Detalle de Componentes
 ### Google Cloud Pub/Sub
-Google Cloud Pub/Sub se utiliza para decoupling de servicios productores de datos de los consumidores. Este enfoque asegura un procesamiento de mensajes escalable y confiable. Se configuró un tema específico para las órdenes, donde cada cambio de estado es publicado en tiempo real por una Cloud Functions.
+Google Cloud Pub/Sub se utiliza para decoupling de servicios productores de datos de los consumidores. Este enfoque asegura un procesamiento de mensajes escalable y confiable. Se configuró un tema específico para las órdenes, donde cada cambio de estado es publicado en tiempo real por una Cloud Function.
 
 ### Google Cloud Dataflow
 Dataflow procesa los datos de Pub/Sub (con una suscripción de tipo PULL) para realizar la limpieza inicial y transformaciones necesarias para la compatibilidad con el esquema de BigQuery. Este paso incluye filtrar campos irrelevantes y convertir tipos de datos. La elección de Dataflow se debe a su capacidad para manejar grandes volúmenes de datos en streaming, su escalabilidad automática y su integración nativa con otros servicios de GCP.
