@@ -1,4 +1,4 @@
-#------------------------------   Este es un código demostrativo y no está completo por razones demostrativas-----------------------------------
+#------------------------------   Este es un código demostrativo a partir de la implementación real   ---------------------------------
 
 import warnings
 import apache_beam as beam
