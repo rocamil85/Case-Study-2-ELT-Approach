@@ -9,7 +9,7 @@ La necesidad de procesar grandes volúmenes de datos de órdenes en tiempo real 
 La arquitectura diseñada se centra en la ingestión de eventos de órdenes en tiempo real, su procesamiento inicial para limpieza y transformación, y la carga en BigQuery para transformaciones más complejas y análisis.
 
 ## Flujo de Datos
-**Extracción:** Las órdenes son capturadas y enviadas en formato JSON cada vez que cambian de estado. A diferencia del **[Caso de Estudio 1](https://github.com/rocamil85/Caso-de-Estudio-1-Aproximacion-ETL)** donde se consultaban las órdenes cada día a las 2:00 am desde Cloud Run, aquí se decide que el "sistema tercerizado" envíe en tiempo real la orden cada vez que se crea o cambia de estado.
+**Extracción:** Las órdenes son capturadas y enviadas en formato JSON cada vez que cambian de estado. A diferencia del **[Caso de Esudio 1](https://github.com/rocamil85/Case-Study-1-ETL-Approach)** donde se consultaban las órdenes cada día a las 2:00 am desde Cloud Run, aquí se decide que el "sistema tercerizado" envíe en tiempo real la orden cada vez que se crea o cambia de estado.
 
 **Pub/Sub:** Una Cloud Function recibe las órdenes y las publica en un tema de Pub/Sub diseñado para la ingestión de eventos en tiempo real.
 
